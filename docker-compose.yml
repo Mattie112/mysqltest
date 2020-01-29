@@ -1,0 +1,21 @@
+version: '3.5'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    working_dir: /opt/project
+    ports:
+      - '80:80'
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'iamreallysecure'
+      MYSQL_DATABASE: 'empty'
+    command: --init-file /docker-entrypoint-initdb.d/con_limit.sql
+    volumes:
+    - ./mysql:/docker-entrypoint-initdb.d
+    ports:
+      - '3306:3306'
