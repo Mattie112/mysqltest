@@ -1,7 +1,4 @@
 <?php
-// How to test:
-// docker-compose up
-// Open http://localhost/mysqltest.php and refresh 10 times
 $pdo_attr = [
     PDO::ATTR_PERSISTENT => true,
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET CHARACTER SET utf8;",
