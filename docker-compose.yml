@@ -10,7 +10,7 @@ services:
     ports:
       - '80:80'
   mysql:
-    image: mysql:latest
+    image: mysql:8.0.19
     environment:
       MYSQL_ROOT_PASSWORD: 'iamreallysecure'
       MYSQL_DATABASE: 'empty'
